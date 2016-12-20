@@ -40,6 +40,7 @@ $(".student-list").after($pagination);
 // }
 
 
+ $(".pagination ul").append("<li><a class='active' href='#'> 1</a></li>");
 if(numberOfStudents > 10) {
  $(".pagination ul").append("<li><a class='active' href='#'> 2</a></li>");
 }
