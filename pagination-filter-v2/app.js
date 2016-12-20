@@ -14,10 +14,12 @@ const studentList = document.getElementsByClassName('student-list'); // The UL t
 const studentItem = document.getElementsByClassName('student-item'); //This holds each student section block
 const numberOfStudents = studentItem.length;
 const itemsPerPage = 10;
-const numberOfLinks = Math.floor(numberOfStudents/itemsPerPage);
+const numberOfLinks = Math.ceil(numberOfStudents/itemsPerPage);
 
 // The below code will only show the first 10 students on loading
-$(".student-item").slice(itemsPerPage).hide();
+$(".student-item").hide();
+$(".student-item").slice(0, 10).show()
+
 
 //creating tree/html to DOM  (This creates the div + UL)
 var $pagination = $("<div class='pagination'></div>");
@@ -28,7 +30,25 @@ $(".student-list").after($pagination);
 var pageNumber = 0;
 while(numberOfLinks > pageNumber){
 pageNumber++;
- $(".pagination ul").append("<li><a class='' href='#'>" +pageNumber + "</a></li>");
+ $(".pagination ul").append("<li><a class=' " + pageNumber + "' href='#'>" +pageNumber + "</a></li>");
 }
 
 const getPageNumber = document.getElementsByClassName('paginationUL');
+$(".paginationUL li a.1").on("click", function (){
+  $(".student-item").hide().slice(0,10).show();
+});
+$(".paginationUL li a.2").on("click", function (){
+  $(".student-item").hide().slice(10,20).show();
+});
+$(".paginationUL li a.3").on("click", function (){
+  $(".student-item").hide().slice(20,30).show();
+});
+$(".paginationUL li a.4").on("click", function (){
+  $(".student-item").hide().slice(30,40).show();
+});
+$(".paginationUL li a.5").on("click", function (){
+  $(".student-item").hide().slice(40,50).show();
+});
+$(".paginationUL li a.6").on("click", function (){
+  $(".student-item").hide().slice(50,60).show();
+});
