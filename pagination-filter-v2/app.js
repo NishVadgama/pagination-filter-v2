@@ -20,29 +20,41 @@ const numberOfLinks = Math.floor(numberOfStudents/itemsPerPage);
 // The below code will only show the first 10 students on loading
 $(".student-item").slice(itemsPerPage).hide();
 
-//creating pagination to html  (This creates only the first page of 10 students)
+//creating pagination to html  (This creates the div + UL)
 var $pagination = $("<div class='pagination'></div>");
-$($pagination).append("<ul></ul>");
-$($pagination).append("<li></li>");
-$($pagination).append("<a class='active' href='#  '>1 </a>");
+$($pagination).append("<ul class ='paginationUL'></ul>");
 $(".student-list").after($pagination);
 
+//the li tag with the paginatino links will be added dynamically throgh a function
+
+
+
+// $($pagination).append("<a class='active' href='#  '>1 </a>");
+
+
 //creates a pagination depending on the number of students (increments of 10)
+// var pageNumber = 0;
+// for(var i = 0; i < numberOfLinks.length; i++){
+//   $($pagination[i]).append("<a class='active' href='#" + pageNumber + "'> </a>");
+//   pageNumber += 1;
+// }
+
+
 if(numberOfStudents > 10) {
-  $($pagination).append("<a class='' href='#  '> 2</a>");
+ $(".pagination ul").append("<li><a class='active' href='#'> 2</a></li>");
 }
 if(numberOfStudents > 20) {
-  $($pagination).append("<a class='' href='#  '> 3</a>");
+  $(".pagination ul").append("<li><a class='active' href='#'> 3</a></li>");
 }
 if(numberOfStudents > 30) {
-  $($pagination).append("<a class='' href='#  '> 4</a>");
+$(".pagination ul").append("<li><a class='active' href='#'> 4</a></li>");
 }
 if(numberOfStudents > 40) {
-  $($pagination).append("<a class='' href='#  '> 5</a>");
+$(".pagination ul").append("<li><a class='active' href='#'> 5</a></li>");
 }
 if(numberOfStudents > 50) {
-  $($pagination).append("<a class='' href='#  '> 6</a>");
+$(".pagination ul").append("<li><a class='active' href='#'> 6</a></li>");
 }
 if(numberOfStudents > 60) {
-  $($pagination).append("<a class='' href='#  '> 7</a>");
+$(".pagination ul").append("<li><a class='active' href='#'> 7</a></li>");
 }
