@@ -25,36 +25,30 @@ var $pagination = $("<div class='pagination'></div>");
 $($pagination).append("<ul class ='paginationUL'></ul>");
 $(".student-list").after($pagination);
 
-
-
-
-// $($pagination).append("<a class='active' href='#  '>1 </a>");
-
-
 //creates a pagination depending on the number of students (increments of 10)
-// var pageNumber = 0;
-// for(var i = 0; i < numberOfLinks.length; i++){
-//   $($pagination[i]).append("<a class='active' href='#" + pageNumber + "'> </a>");
-//   pageNumber += 1;
-// }
+var pageNumber = 0;
+for(var i = 0; i < numberOfLinks.length; i++){
+  $(".pagination ul").append("<li><a class='active' href='#'>" +pageNumber[i] + "</a></li>");
+  pageNumber += 1;
+}
 
-//the li tag with the paginatino links will be added dynamically throgh a function
- $(".pagination ul").append("<li><a class='active' href='#'> 1</a></li>");
-if(numberOfStudents > 10) {
- $(".pagination ul").append("<li><a class='active' href='#'> 2</a></li>");
-}
-if(numberOfStudents > 20) {
-  $(".pagination ul").append("<li><a class='active' href='#'> 3</a></li>");
-}
-if(numberOfStudents > 30) {
-$(".pagination ul").append("<li><a class='active' href='#'> 4</a></li>");
-}
-if(numberOfStudents > 40) {
-$(".pagination ul").append("<li><a class='active' href='#'> 5</a></li>");
-}
-if(numberOfStudents > 50) {
-$(".pagination ul").append("<li><a class='active' href='#'> 6</a></li>");
-}
-if(numberOfStudents > 60) {
-$(".pagination ul").append("<li><a class='active' href='#'> 7</a></li>");
-}
+// //the li tag with the paginatino links will be added dynamically throgh a function
+//  $(".pagination ul").append("<li><a class='active' href='#'> 1</a></li>");
+// if(numberOfStudents > 10) {
+//  $(".pagination ul").append("<li><a class='active' href='#'> 2</a></li>");
+// }
+// if(numberOfStudents > 20) {
+//   $(".pagination ul").append("<li><a class='active' href='#'> 3</a></li>");
+// }
+// if(numberOfStudents > 30) {
+// $(".pagination ul").append("<li><a class='active' href='#'> 4</a></li>");
+// }
+// if(numberOfStudents > 40) {
+// $(".pagination ul").append("<li><a class='active' href='#'> 5</a></li>");
+// }
+// if(numberOfStudents > 50) {
+// $(".pagination ul").append("<li><a class='active' href='#'> 6</a></li>");
+// }
+// if(numberOfStudents > 60) {
+// $(".pagination ul").append("<li><a class='active' href='#'> 7</a></li>");
+// }
