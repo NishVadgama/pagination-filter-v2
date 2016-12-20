@@ -25,7 +25,6 @@ var $pagination = $("<div class='pagination'></div>");
 $($pagination).append("<ul class ='paginationUL'></ul>");
 $(".student-list").after($pagination);
 
-//the li tag with the paginatino links will be added dynamically throgh a function
 
 
 
@@ -39,7 +38,7 @@ $(".student-list").after($pagination);
 //   pageNumber += 1;
 // }
 
-
+//the li tag with the paginatino links will be added dynamically throgh a function
  $(".pagination ul").append("<li><a class='active' href='#'> 1</a></li>");
 if(numberOfStudents > 10) {
  $(".pagination ul").append("<li><a class='active' href='#'> 2</a></li>");
