@@ -18,22 +18,24 @@ const numberOfLinks = Math.ceil(numberOfStudents/itemsPerPage);
 
 // The below code will only show the first 10 students on loading
 $(".student-item").hide();
-$(".student-item").slice(0, 10).show()
-
+$(".student-item").slice(0, 10).show();
 
 //creating tree/html to DOM  (This creates the div + UL)
 var $pagination = $("<div class='pagination'></div>");
 $($pagination).append("<ul class ='paginationUL'></ul>");
 $(".student-list").after($pagination);
 
-//creates a pagination depending on the number of students (increments of 10)
 var pageNumber = 0;
+var start = itemsPerPage * pageNumber;
+var end = start + itemsPerPage;
+//creates a pagination depending on the number of students (increments of 10)
+
 while(numberOfLinks > pageNumber){
 pageNumber++;
  $(".pagination ul").append("<li><a class=' " + pageNumber + "' href='#'>" +pageNumber + "</a></li>");
 }
 
-const getPageNumber = document.getElementsByClassName('paginationUL');
+//this will assigns the number of students for each page when clicked
 $(".paginationUL li a.1").on("click", function (){
   $(".student-item").hide().slice(0,10).show();
 });
@@ -52,3 +54,14 @@ $(".paginationUL li a.5").on("click", function (){
 $(".paginationUL li a.6").on("click", function (){
   $(".student-item").hide().slice(50,60).show();
 });
+
+
+
+// var pageNum = 0;
+// var start_here = itemsPerPage * pageNum;  //this will be the begining of slice
+// var end_here = start_here + itemsPerPage; //this will be end of slice
+//
+// while(numberOfLinks > pageNumber){
+// pageNum++;
+//   $(".student-item").hide().slice(start_here, end_here).show();
+// }
